@@ -1,0 +1,32 @@
+<bottomsheet:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:ViewModels"
+             xmlns:bottomsheet="http://pluginmauibottomsheet.com"
+             x:Class="MapsTest.BSView"
+             IsModal="True"
+             HasHandle="True"
+             IsCancelable="True"
+             IsDraggable="True"
+             CornerRadius="6"
+             States="Peek"
+             IsOpen="{Binding IsOpen}">
+    <bottomsheet:BottomSheet.Content>
+        <bottomsheet:BottomSheetContent>
+            <bottomsheet:BottomSheetContent.ContentTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="16">
+                        <VerticalStackLayout.Behaviors>
+                            <bottomsheet:BottomSheetPeekBehavior />
+                        </VerticalStackLayout.Behaviors>
+                        <Label Text="Line 1" HorizontalTextAlignment="Center" />
+                        <Label Text="Line 2" HorizontalTextAlignment="Center" />
+                        <Label Text="Line 3" HorizontalTextAlignment="Center" />
+                        <Label Text="Line 4" HorizontalTextAlignment="Center" />
+                        <Label Text="Line 5" HorizontalTextAlignment="Center" />
+                        <Label Text="Line 6" HorizontalTextAlignment="Center" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </bottomsheet:BottomSheetContent.ContentTemplate>
+        </bottomsheet:BottomSheetContent>
+    </bottomsheet:BottomSheet.Content>
+</bottomsheet:BottomSheet>

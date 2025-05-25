@@ -1,15 +1,20 @@
 ﻿using Microsoft.Extensions.Logging;
+using Plugin.Maui.BottomSheet.Hosting;
 
 namespace MapsTest;
 
 public static class MauiProgram
 {
+
+	public static MauiApp Service;
+
 	public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
 			.UseMauiMaps()
+			.UseBottomSheet()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -20,6 +25,8 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		return builder.Build();
+		Service = builder.Build();
+
+		return Service;
 	}
 }

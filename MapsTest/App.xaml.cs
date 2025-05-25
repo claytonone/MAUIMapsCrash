@@ -1,4 +1,6 @@
-﻿namespace MapsTest;
+﻿using Plugin.Maui.BottomSheet.Navigation;
+
+namespace MapsTest;
 
 public partial class App : Application
 {
@@ -9,6 +11,8 @@ public partial class App : Application
 
 	protected override Window CreateWindow(IActivationState? activationState)
 	{
-		return new Window(new NavigationPage(new MainPage()));
+		var s = MauiProgram.Service.Services.GetService<IBottomSheetNavigationService>();
+	
+		return new Window(new NavigationPage(new MainPage(s)));
 	}
 }
